@@ -8,7 +8,24 @@ text: ["a","b"] output => ["2","1"]
 """
 
 
-def fn_hack_8():
-    result = ["a","b","c","d","e"]
-    #...
+
+def fn_hack_8(object):
+    result = []
+    if len(object)%2:
+        lenght = len(object)
+        for item in object:
+            lenght = lenght-1
+            result.append( object[lenght]+"-"+str(object.index(object[lenght])+1))
+        print(result)
+    else:
+        lenght = len(object)
+        for item in object:
+            lenght = lenght-1
+            result.append(str(object.index(object[lenght])+1))
+        print(result)
     return result
+
+fn_hack_8(["a","b","c","d","e"])
+fn_hack_8(["a","b","c"])
+fn_hack_8(["a","b","c","d"])
+fn_hack_8(["a","b"])
